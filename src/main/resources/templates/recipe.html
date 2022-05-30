@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<body>
+<section layout:fragment="content">
+    <div class="recipe" th:each="r: ${recipes}">
+        <div>
+            <h2 th:text="${r.name}">Nazwa</h2>
+        </div>
+        <div class="edit-or-delete">
+            <a th:href="|/recipe/${r.id}/edit|">[Edytuj]</a>
+            <a th:href="|/recipe/${r.id}/remove|">[Usuń]</a>
+        </div>
+        <div>
+            <p th:text="|Kategoria:|" style="font-weight: bold;"></p>
+            <p th:text="${r.category.name}">Kategoria</p>
+        </div>
+        <img th:src="${r.img}"/><br/>
+        <div>
+            <p th:text="|Składniki:|" style="font-weight: bold;"></p>
+            <p th:text="${r.ingredients}">Składniki</p>
+        </div>
+        <div>
+            <p th:text="|Przygotowanie:|" style="font-weight: bold;"></p>
+            <p th:text="${r.description}">Przygotowanie</p>
+        </div>
+        <div>
+            <p th:text="|Czas przygotowania:|" style="font-weight: bold;"></p>
+            <p th:text="|${r.prepareTime}min|">Czas przygotowania</p>
+        </div>
+        <div>
+            <p th:text="|Kcal:|" style="font-weight: bold;"></p>
+            <p th:text="${r.kcal}">Kcal</p>
+        </div>
+        <div>
+            <p th:text="|Ilość polubień:|" style="font-weight: bold;"></p>
+            <p th:text="${r.likesCounter}">Likes</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

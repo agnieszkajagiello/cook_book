@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<body>
+<section layout:fragment="content">
+    <h2>Kategorie przepisów</h2>
+    <a th:href="|/list?id=${category.id}|" class="meals" th:each="category: ${categories}">
+        <img th:src="${category.img}">
+        <div class="meals-categories">
+            <h3 th:text="${category.name}"></h3>
+            <p th:text="${category.description}"></p>
+        </div>
+    </a>
+</section>
+</body>
+</html>

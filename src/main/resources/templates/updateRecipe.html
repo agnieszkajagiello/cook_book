@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<section layout:fragment="content" class="add-recipe">
+    <form th:action="@{/save}" method="post" class="new-recipe" th:object="${recipe}">
+        <input type="number" class="form-control" id="id" th:field="*{id}" hidden>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nazwa przepisu</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" th:field="*{name}" placeholder="Pierogi ruskie" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Składniki</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" th:field="*{ingredients}" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea2">Przygotowanie</label>
+            <textarea class="form-control" id="exampleFormControlTextarea2" th:field="*{description}" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput2">Czas przygotowania [min]</label>
+            <input type="number" class="form-control" id="exampleFormControlInput2" th:field="*{prepareTime}" placeholder="90" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput3">Kalorie [kcal]</label>
+            <input type="number" class="form-control" id="exampleFormControlInput3" th:field="*{kcal}" placeholder="1500" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Zdjęcie</label>
+            <input type="text" class="form-control" id="exampleFormControlFile1" placeholder="Url obrazka" th:field="*{img}"/>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Kategoria</label>
+            <select class="form-control" id="exampleFormControlSelect1" th:field="*{category}" required>
+                <option selected value="">Wybierz...</option>
+                <option th:each="c: ${categories}"
+                        th:value="${c.id}"
+                        th:text="${c.name}">
+                </option>
+            </select>
+        </div>
+        <input type="submit" value="Dodaj" class="btn btn-primary"/>
+    </form>
+</section>
+</body>
+</html>

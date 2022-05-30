@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<body>
+<section layout:fragment="content">
+    <h2>Najbardziej lubiane przepisy</h2>
+    <div th:each="r: ${recipes}" th:if="${!recipes.isEmpty()}">
+        <img th:src="${r.img}">
+        <div class="link">
+            <a class="top-meals" th:href="|/recipe/${r.id}|" th:text="${r.name}"></a>
+        </div>
+    </div>
+    <h3 th:if="${recipes.isEmpty()}">Brak przepisów!</h3>
+</section>
+</body>
+</html>

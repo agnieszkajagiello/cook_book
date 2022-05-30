@@ -1,0 +1,143 @@
+.header {
+    width: 100%;
+    background-image: url('/food.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    padding: 130px 100px;
+}
+
+.footer {
+    font-size: small;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.bar {
+    position: relative;
+    display: flex;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px;
+    width: 100%;
+    justify-content: center;
+    top: 180px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 30px;
+    font-family: Garamond, serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h3 {
+    text-align: center;
+    font-family: Garamond, fantasy;
+    font-weight: bold;
+    font-style: italic;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.link {
+    text-align: center;
+}
+
+.recipe {
+    text-align: center;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+.top-meals, .all-meals {
+    font-size: medium;
+    font-family: Georgia, sans-serif;
+    font-weight: lighter;
+    margin-left: 250px;
+    margin-right: 250px;
+    text-decoration: none;
+}
+
+.meals {
+    display: flex;
+    flex-direction: row;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.meals-categories {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding: 0;
+    color: black;
+}
+
+img {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me {
+    text-align: center;
+    margin-top: 30px;
+    font-family: Monaco, monospace;
+}
+
+.add-recipe {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.new-recipe {
+    margin-top: 50px;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+#golabki {
+    background-image: url('/golabki-bez-zawijania.jpg');
+}
+
+#krupnik {
+    background-image: url('/krupnik.jpg');
+}
+
+#muffinki {
+    background-image: url('/muffinki-czekoladowe.jpg');
+}
+
+#oponki {
+    background-image: url('/oponki-serowe.jpg');
+}
+
+#salatka-jajeczna {
+    background-image: url('/salatka-jajeczna.jpg');
+}
+
+#salatka-zydowska {
+    background-image: url('/salatka-zydowska.jpg');
+}
+
+#spaghetti {
+    background-image: url('/spaghetti-bolognese.jpg');
+}
+
+#zupa-grzybowa {
+    background-image: url('/zupa-grzybowa.jpg');
+}

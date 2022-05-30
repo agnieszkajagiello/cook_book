@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<body>
+<section class="all-meals" layout:fragment="content">
+    <h2>Wszystkie przepisy</h2>
+    <table class="table" th:if="${!recipes.isEmpty()}">
+        <thead>
+        <tr>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Czas przygotowania [min]</th>
+            <th scope="col">Kcal</th>
+            <th scope="col">Kategoria</th>
+            <th scope="col">Ilość polubień</th>
+            <th scope="col">Lubisz to?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="r: ${recipes}">
+            <td>
+                <a style="text-decoration: none;" th:href="|/recipe/${r.id}|" th:text="${r.name}">Nazwa</a>
+            </td>
+            <td th:text="${r.prepareTime}">Czas przygotowania</td>
+            <td th:text="${r.kcal}">Kcal</td>
+            <td th:text="${r.category.name}">Kategoria</td>
+            <td th:text="${r.likesCounter}">Ilość polubień</td>
+            <td>
+                <form th:action="|/recipe/${r.id}/like|" method="post">
+                    <button type="submit" class="btn btn-success">Lubię!</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h3 th:if="${recipes.isEmpty()}">Brak przepisów!</h3>
+</section>
+</body>
+</html>
